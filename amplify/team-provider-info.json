@@ -13,7 +13,10 @@
     },
     "categories": {
       "auth": {
-        "holoapp2e965156": {}
+        "holoapp2e965156": {},
+        "holoapp": {
+          "googleClientId": "googleusers"
+        }
       }
     }
   }
