@@ -17,6 +17,49 @@
         "holoapp": {
           "googleClientId": "googleusers"
         }
+      },
+      "function": {
+        "testCrud": {
+          "deploymentBucketName": "amplify-amplify8da8448d727a4-staging-182023-deployment",
+          "s3Key": "amplify-builds/testCrud-615770596a5841613467-build.zip"
+        },
+        "holoappLayer": {
+          "deploymentBucketName": "amplify-amplify8da8448d727a4-staging-182023-deployment",
+          "s3Key": "amplify-builds/holoappLayer-build.zip"
+        }
+      }
+    },
+    "nonCFNdata": {
+      "function": {
+        "holoLayer": {
+          "layerVersionMap": {
+            "1": {
+              "permissions": [
+                {
+                  "type": "private"
+                }
+              ]
+            }
+          }
+        },
+        "holoappLayer": {
+          "layerVersionMap": {
+            "1": {
+              "permissions": [
+                {
+                  "type": "awsAccounts",
+                  "accounts": [
+                    "948362195982"
+                  ]
+                },
+                {
+                  "type": "private"
+                }
+              ],
+              "hash": "+b7zkjXIThdFmFhTrycqEQExOTeD5rR+9AfnBR6Qtb0="
+            }
+          }
+        }
       }
     }
   }

@@ -1,0 +1,14 @@
+[
+  {
+    "value": "nodejs",
+    "name": "NodeJS",
+    "layerExecutablePath": "nodejs\\node_modules",
+    "cloudTemplateValue": "nodejs14.x"
+  },
+  {
+    "value": "python",
+    "name": "Python",
+    "layerExecutablePath": "python\\lib\\python3.8\\site-packages",
+    "cloudTemplateValue": "python3.8"
+  }
+]

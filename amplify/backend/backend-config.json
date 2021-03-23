@@ -30,5 +30,47 @@
       "service": "S3",
       "providerPlugin": "awscloudformation"
     }
+  },
+  "function": {
+    "testCrud": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": [
+        {
+          "category": "api",
+          "resourceName": "notesapp",
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput",
+            "GraphQLAPIKeyOutput"
+          ]
+        },
+        {
+          "category": "storage",
+          "resourceName": "imagestorage",
+          "attributes": [
+            "BucketName"
+          ]
+        },
+        {
+          "category": "function",
+          "resourceName": "holoappLayer",
+          "attributes": [
+            "Arn"
+          ]
+        }
+      ]
+    },
+    "holoLayer": {
+      "providerPlugin": "awscloudformation",
+      "service": "LambdaLayer",
+      "build": true
+    },
+    "holoappLayer": {
+      "providerPlugin": "awscloudformation",
+      "service": "LambdaLayer",
+      "build": true
+    }
   }
 }

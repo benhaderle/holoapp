@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "api": {
+      "notesapp": [
+        "Query",
+        "Mutation"
+      ]
+    },
+    "storage": {
+      "imagestorage": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ],
+      "Note:@model(appsync)": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    }
+  },
+  "lambdaLayers": [
+    {
+      "type": "ProjectLayer",
+      "resourceName": "holoappLayer",
+      "version": 1
+    }
+  ]
+}

@@ -3,6 +3,7 @@ import './App.css';
 import { listNotes } from './graphql/queries';
 import { createNote as createNoteMutation, deleteNote as deleteNoteMutation } from './graphql/mutations';
 import { API, Storage } from 'aws-amplify';
+import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 
 const initialFormState = { name: '', description: '' }
 
@@ -30,7 +31,10 @@ function App() {
 
   async function createNote() {
   if (!formData.name || !formData.description) return;
-  await API.graphql({ query: createNoteMutation, variables: { input: formData } });
+  await API.graphql({ 
+    query: createNoteMutation,
+    variables: { input: formData }
+  });
   if (formData.image) {
     const image = await Storage.get(formData.image);
     formData.image = image;
@@ -42,7 +46,10 @@ function App() {
   async function deleteNote({ id }) {
     const newNotesArray = notes.filter(note => note.id !== id);
     setNotes(newNotesArray);
-    await API.graphql({ query: deleteNoteMutation, variables: { input: { id } }});
+    await API.graphql({ 
+      query: deleteNoteMutation,
+      variables: { input: { id }}
+    });
   }
 
   async function onChange(e) {
@@ -89,4 +96,4 @@ function App() {
   );
 }
 
-export default App;
+export default withAuthenticator(App);
