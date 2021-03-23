@@ -1,12 +1,5 @@
 {
-  "auth": {
-    "holoapp2e965156": {
-      "service": "Cognito",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [],
-      "customAuth": false
-    }
-  },
+  "auth": {},
   "api": {
     "notesapp": {
       "service": "AppSync",

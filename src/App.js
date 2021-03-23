@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 import { listNotes } from './graphql/queries';
 import { createNote as createNoteMutation, deleteNote as deleteNoteMutation } from './graphql/mutations';
 import { API, Storage } from 'aws-amplify';
@@ -18,7 +17,7 @@ function App() {
   async function fetchNotes() {
   const apiData = await API.graphql({ query: listNotes });
   const notesFromAPI = apiData.data.listNotes.items;
-  
+
   await Promise.all(notesFromAPI.map(async note => {
     if (note.image) {
       const image = await Storage.get(note.image);
@@ -86,9 +85,8 @@ function App() {
           ))
         }
       </div>
-      <AmplifySignOut />
     </div>
   );
 }
 
-export default withAuthenticator(App);
+export default App;
