@@ -6,7 +6,20 @@ import reportWebVitals from './reportWebVitals';
 
 import Amplify from 'aws-amplify';
 import config from './aws-exports';
-Amplify.configure(config);
+// //const Jimp = require('jimp');
+// import Jimp from 'jimp';
+// const fs = require('fs')
+// const path = require('path')
+// const {spawn} = require('child_process')
+
+// Amplify.configure(config);
+
+// console.log("test")
+// console.log(__filename)
+// test();
+// async function test(){
+//   const rotImage = await Jimp.read('white.png');
+// }
 
 ReactDOM.render(
   <React.StrictMode>
