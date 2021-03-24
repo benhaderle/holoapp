@@ -31,17 +31,6 @@
     },
     "nonCFNdata": {
       "function": {
-        "holoLayer": {
-          "layerVersionMap": {
-            "1": {
-              "permissions": [
-                {
-                  "type": "private"
-                }
-              ]
-            }
-          }
-        },
         "holoappLayer": {
           "layerVersionMap": {
             "1": {

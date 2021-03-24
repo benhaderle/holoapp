@@ -62,11 +62,6 @@
         }
       ]
     },
-    "holoLayer": {
-      "providerPlugin": "awscloudformation",
-      "service": "LambdaLayer",
-      "build": true
-    },
     "holoappLayer": {
       "providerPlugin": "awscloudformation",
       "service": "LambdaLayer",
