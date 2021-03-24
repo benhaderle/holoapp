@@ -63,7 +63,7 @@ function App() {
   
 
 
-  setFormData({ ...formData, image: "original/" + file.name });
+  setFormData({ ...formData, image: "resized/" + file.name });
   await Storage.put("original/" + file.name, file);
   fetchNotes();
 }
