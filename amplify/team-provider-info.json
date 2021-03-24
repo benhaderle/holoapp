@@ -15,32 +15,6 @@
       "auth": {
         "holoapp2e965156": {},
         "holoapp173551fa": {}
-      },
-      "function": {
-        "testCrud": {
-          "deploymentBucketName": "amplify-amplify8da8448d727a4-staging-182023-deployment",
-          "s3Key": "amplify-builds/testCrud-615770596a5841613467-build.zip"
-        },
-        "holoappLayer": {
-          "deploymentBucketName": "amplify-amplify8da8448d727a4-staging-182023-deployment",
-          "s3Key": "amplify-builds/holoappLayer-build.zip"
-        }
-      }
-    },
-    "nonCFNdata": {
-      "function": {
-        "holoappLayer": {
-          "layerVersionMap": {
-            "1": {
-              "permissions": [
-                {
-                  "type": "private"
-                }
-              ],
-              "hash": "0/2tpPnNwaSgpR91QjwAkBkEw72/qlO3YD9jtAaQTxk="
-            }
-          }
-        }
       }
     }
   }

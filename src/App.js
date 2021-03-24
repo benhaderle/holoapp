@@ -205,6 +205,7 @@ function App() {
         onChange={onChange}
       />
       <button onClick={createNote}>Create Note</button>
+
       <div style={{marginBottom: 30}}>
         {
           notes.map(note => (
@@ -219,6 +220,7 @@ function App() {
           ))
         }
       </div>
+      <AmplifySignOut />
     </div>
   );
 }
