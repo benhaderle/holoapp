@@ -1,6 +1,6 @@
 {
     "identityPoolName": "holoapp173551fa_identitypool_173551fa",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "holoap173551fa",
     "userPoolName": "holoapp173551fa_userpool_173551fa",
     "autoVerifiedAttributes": [
