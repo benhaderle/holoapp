@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "testAuthIdentityPool",
-    "allowUnauthenticatedIdentities": true,
-    "resourceNameTruncated": "holoapabde49a2",
-    "userPoolName": "holoapp",
+    "identityPoolName": "holoapp173551fa_identitypool_173551fa",
+    "allowUnauthenticatedIdentities": false,
+    "resourceNameTruncated": "holoap173551fa",
+    "userPoolName": "holoapp173551fa_userpool_173551fa",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -22,12 +22,16 @@
     ],
     "userpoolClientGenerateSecret": false,
     "userpoolClientRefreshTokenValidity": 30,
-    "userpoolClientWriteAttributes": [],
-    "userpoolClientReadAttributes": [],
-    "userpoolClientLambdaRole": "holoapabde49a2_userpoolclient_lambda_role",
+    "userpoolClientWriteAttributes": [
+        "email"
+    ],
+    "userpoolClientReadAttributes": [
+        "email"
+    ],
+    "userpoolClientLambdaRole": "holoap173551fa_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "abde49a2",
-    "resourceName": "holoapp",
+    "sharedId": "173551fa",
+    "resourceName": "holoapp173551fa",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -41,24 +45,9 @@
             "Arn"
         ]
     },
-    "serviceName": "Cognito",
-    "usernameAttributes": [
-        "email"
-    ],
-    "useDefault": "manual",
-    "userPoolGroups": false,
+    "useDefault": "default",
     "userPoolGroupList": [],
-    "adminQueries": false,
+    "serviceName": "Cognito",
     "usernameCaseSensitive": false,
-    "dependsOn": [],
-    "authProviders": [
-        "accounts.google.com"
-    ],
-    "thirdPartyAuth": true,
-    "triggers": "{}",
-    "hostedUI": false,
-    "parentStack": {
-        "Ref": "AWS::StackId"
-    },
-    "permissions": []
+    "dependsOn": []
 }

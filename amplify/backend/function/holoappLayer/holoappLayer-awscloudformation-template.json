@@ -67,16 +67,6 @@
           "Ref": "AWS::AccountId"
         }
       }
-    },
-    "LambdaLayerPermissionawsAccounts9483621959821": {
-      "Type": "AWS::Lambda::LayerVersionPermission",
-      "Properties": {
-        "Action": "lambda:GetLayerVersion",
-        "LayerVersionArn": {
-          "Ref": "LambdaLayer"
-        },
-        "Principal": "948362195982"
-      }
     }
   },
   "Conditions": {

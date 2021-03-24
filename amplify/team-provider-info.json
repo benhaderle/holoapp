@@ -14,9 +14,7 @@
     "categories": {
       "auth": {
         "holoapp2e965156": {},
-        "holoapp": {
-          "googleClientId": "googleusers"
-        }
+        "holoapp173551fa": {}
       },
       "function": {
         "testCrud": {
@@ -36,16 +34,10 @@
             "1": {
               "permissions": [
                 {
-                  "type": "awsAccounts",
-                  "accounts": [
-                    "948362195982"
-                  ]
-                },
-                {
                   "type": "private"
                 }
               ],
-              "hash": "+b7zkjXIThdFmFhTrycqEQExOTeD5rR+9AfnBR6Qtb0="
+              "hash": "0/2tpPnNwaSgpR91QjwAkBkEw72/qlO3YD9jtAaQTxk="
             }
           }
         }

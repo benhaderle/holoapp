@@ -1,6 +1,6 @@
 {
   "auth": {
-    "holoapp": {
+    "holoapp173551fa": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
