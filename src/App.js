@@ -16,20 +16,6 @@ function App() {
     fetchNotes();
   }, []);
 
-  async function fetchNotes() {
-  const apiData = await API.graphql({ query: listNotes });
-  const notesFromAPI = apiData.data.listNotes.items;
-
-  await Promise.all(notesFromAPI.map(async note => {
-    if (note.image) {
-      const image = await Storage.get(note.image);
-
-      note.image = image;
-    }
-    return note;
-  }))
-  setNotes(apiData.data.listNotes.items);
-}
 
   async function createNote() {
   if (!formData.name ) return;
@@ -50,6 +36,7 @@ function App() {
 
   async function deleteNote({ id }) {
   	let deletedNote = notes.find(note=> note.id === id);
+  	console.log(deletedNote);
   	await Storage.remove(deletedNote.image);
 
     const newNotesArray = notes.filter(note => note.id !== id);
@@ -59,6 +46,20 @@ function App() {
       variables: { input: { id }}
     });
   }
+   async function fetchNotes() {
+  const apiData = await API.graphql({ query: listNotes });
+  const notesFromAPI = apiData.data.listNotes.items;
+
+  await Promise.all(notesFromAPI.map(async note => {
+    if (note.image) {
+      const image = await Storage.get(note.image);
+
+      note.image = image;
+    }
+    return note;
+  }))
+  setNotes(apiData.data.listNotes.items);
+}
 
   async function onChange(e) {
   if (!e.target.files[0]) return
