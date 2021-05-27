@@ -50,14 +50,14 @@ function App() {
   const apiData = await API.graphql({ query: listNotes });
   const notesFromAPI = apiData.data.listNotes.items;
 
-  await Promise.all(notesFromAPI.map(async note => {
-    if (note.image) {
-      const image = await Storage.get(note.image);
+  // await Promise.all(notesFromAPI.map(async note => {
+  //   if (note.image) {
+  //     const image = await Storage.get(note.image);
 
-      note.image = image;
-    }
-    return note;
-  }))
+  //     note.image = image;
+  //   }
+  //   return note;
+  // }))
   setNotes(apiData.data.listNotes.items);
 }
 
