@@ -24,7 +24,7 @@ function App() {
     let imageURL = await Storage.get(formData.image_Name);
     console.log(imageURL);
 
-      setFormData({ ...formData, image_URL: image_URL });
+      setFormData({ ...formData, image_URL: imageURL });
 
   }
   await API.graphql({ 
