@@ -6,7 +6,7 @@ import { API, Storage } from 'aws-amplify';
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 
 
-const initialFormState = { name: '', description: '' }
+const initialFormState = { name: '' }
 
 function App() {
   const [notes, setNotes] = useState([]);
@@ -19,17 +19,19 @@ function App() {
 
   async function createNote() {
   if (!formData.name ) return;
+  if (formData.image_Name) {
+    console.log(formData.image_Name);
+    let imageURL = await Storage.get(formData.image_Name);
+    console.log(imageURL);
+
+      setFormData({ ...formData, image_URL: image_URL });
+
+  }
   await API.graphql({ 
     query: createNoteMutation,
     variables: { input: formData }
   });
-  if (formData.image) {
-    console.log(formData.image);
-    let image = await Storage.get(formData.image);
-    console.log(image);
-
-    formData.image = image;
-  }
+ 
   setNotes([ ...notes, formData ]);
   setFormData(initialFormState);
 }
@@ -65,7 +67,7 @@ function App() {
   if (!e.target.files[0]) return
   const file = e.target.files[0];
 
-  setFormData({ ...formData, image: "resized/" + file.name });
+  setFormData({ ...formData, image_Name: "resized/" + file.name });
   await Storage.put("original/" + file.name, file);
   fetchNotes();
 }
@@ -77,11 +79,6 @@ function App() {
         onChange={e => setFormData({ ...formData, 'name': e.target.value})}
         placeholder="img name"
         value={formData.name}
-      />
-      <input
-        onChange={e => setFormData({ ...formData, 'description': e.target.value})}
-        placeholder="img description"
-        value={formData.description}
       />
       <input
         type="file"
@@ -97,7 +94,7 @@ function App() {
               <p>{note.description}</p>
               <button onClick={() => deleteNote(note)}>Delete note</button>
               {
-                note.image && <img src={note.image} style={{width: 400}} />
+                note.image && <img src={note.image_URL} style={{width: 400}} />
               }
             </div>
           ))
