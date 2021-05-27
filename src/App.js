@@ -39,7 +39,7 @@ function App() {
   async function deleteNote({ id }) {
   	let deletedNote = notes.find(note=> note.id === id);
   	console.log(deletedNote);
-  	await Storage.remove(deletedNote.image);
+  	await Storage.remove(deletedNote.image_Name);
 
     const newNotesArray = notes.filter(note => note.id !== id);
     setNotes(newNotesArray);
@@ -94,7 +94,7 @@ function App() {
               <p>{note.description}</p>
               <button onClick={() => deleteNote(note)}>Delete note</button>
               {
-                note.image && <img src={note.image_URL} style={{width: 400}} />
+                <img src={note.image_URL} style={{width: 400}} />
               }
             </div>
           ))
