@@ -19,14 +19,14 @@ function App() {
 
   async function createNote() {
   if (!formData.name ) return;
-  if (formData.image_Name) {
-    console.log(formData.image_Name);
-    let imageURL = await Storage.get(formData.image_Name);
-    console.log(imageURL);
+  // if (formData.image_Name) {
+  //   console.log(formData.image_Name);
+  //   let imageURL = await Storage.get(formData.image_Name);
+  //   console.log(imageURL);
 
-      setFormData({ ...formData, image_URL: imageURL });
+  //   setFormData({ ...formData, image_URL: '' });
 
-  }
+  // }
   console.log(formData)
   await API.graphql({ 
     query: createNoteMutation,
@@ -53,14 +53,14 @@ function App() {
   const apiData = await API.graphql({ query: listNotes });
   const notesFromAPI = apiData.data.listNotes.items;
 
-  // await Promise.all(notesFromAPI.map(async note => {
-  //   if (note.image) {
-  //     const image = await Storage.get(note.image);
+  await Promise.all(notesFromAPI.map(async note => {
+    if (note.image_Name) {
+      const image_URL = await Storage.get(note.image);
 
-  //     note.image = image;
-  //   }
-  //   return note;
-  // }))
+      note.image_URL = image_URL;
+    }
+    return note;
+  }))
   setNotes(apiData.data.listNotes.items);
 }
 
