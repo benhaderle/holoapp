@@ -27,6 +27,7 @@ function App() {
       setFormData({ ...formData, image_URL: imageURL });
 
   }
+  console.log(formData)
   await API.graphql({ 
     query: createNoteMutation,
     variables: { input: formData }
