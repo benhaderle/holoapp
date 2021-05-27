@@ -49,6 +49,9 @@ function App() {
 }
 
   async function deleteNote({ id }) {
+  	let deletedNote = notes.find(note=> note.id === id);
+  	await Storage.remove(deletedNote.image);
+
     const newNotesArray = notes.filter(note => note.id !== id);
     setNotes(newNotesArray);
     await API.graphql({ 
@@ -60,8 +63,6 @@ function App() {
   async function onChange(e) {
   if (!e.target.files[0]) return
   const file = e.target.files[0];
-  
-
 
   setFormData({ ...formData, image: "resized/" + file.name });
   await Storage.put("original/" + file.name, file);
