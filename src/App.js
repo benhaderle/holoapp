@@ -6,7 +6,7 @@ import { API, Storage } from 'aws-amplify';
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
 
 
-const initialFormState = { name: '' }
+const initialFormState = { name: '', image_URL: '' }
 
 function App() {
   const [notes, setNotes] = useState([]);
