@@ -55,9 +55,10 @@ function App() {
 
   await Promise.all(notesFromAPI.map(async note => {
     if (note.image_Name) {
-      const image_URL = await Storage.get(note.image);
+      const image_URL = await Storage.get(note.image_Name);
 
       note.image_URL = image_URL;
+
     }
     return note;
   }))
