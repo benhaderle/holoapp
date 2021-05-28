@@ -6,8 +6,8 @@ export const onCreateNote = /* GraphQL */ `
     onCreateNote {
       id
       name
-      description
-      image
+      image_Name
+      image_URL
       createdAt
       updatedAt
     }
@@ -18,8 +18,8 @@ export const onUpdateNote = /* GraphQL */ `
     onUpdateNote {
       id
       name
-      description
-      image
+      image_Name
+      image_URL
       createdAt
       updatedAt
     }
@@ -30,8 +30,8 @@ export const onDeleteNote = /* GraphQL */ `
     onDeleteNote {
       id
       name
-      description
-      image
+      image_Name
+      image_URL
       createdAt
       updatedAt
     }
