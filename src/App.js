@@ -27,6 +27,7 @@ function App() {
   //   setFormData({ ...formData, image_URL: '' });
 
   // }
+  console.log('hey')
   console.log(formData)
   await API.graphql({ 
     query: createNoteMutation,
@@ -57,9 +58,11 @@ function App() {
   await Promise.all(notesFromAPI.map(async note => {
     if (note.image_Name) {
       const image_URL = await Storage.get(note.image_Name);
-      console.log(image_URL);
+
 
       note.image_URL = image_URL;
+      console.log(image_Name);
+      console.log(image_Name);
 
     }
     return note;
