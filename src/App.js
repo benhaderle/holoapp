@@ -49,13 +49,15 @@ function App() {
       variables: { input: { id }}
     });
   }
-   async function fetchNotes() {
+
+  async function fetchNotes() {
   const apiData = await API.graphql({ query: listNotes });
   const notesFromAPI = apiData.data.listNotes.items;
 
   await Promise.all(notesFromAPI.map(async note => {
     if (note.image_Name) {
       const image_URL = await Storage.get(note.image_Name);
+      console.log(image_URL);
 
       note.image_URL = image_URL;
 
