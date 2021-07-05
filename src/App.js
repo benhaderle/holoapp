@@ -61,8 +61,8 @@ function App() {
 
 
       note.image_URL = image_URL;
-      console.log(image_Name);
-      console.log(image_Name);
+      console.log(note.image_Name);
+      console.log(note.image_Name);
 
     }
     return note;
