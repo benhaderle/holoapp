@@ -101,7 +101,7 @@ function App() {
               <p>{note.description}</p>
               <button onClick={() => deleteNote(note)}>Delete note</button>
               {
-                <img src={note.image_URL} style={{width: 400}} />
+                <a href={note.image_URL}> DOWNLOAD HERE</a>
               }
             </div>
           ))
